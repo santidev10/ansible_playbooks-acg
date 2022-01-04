@@ -1,0 +1,7 @@
+--- # async task exmaple
+- hosts: localhost
+  tasks:
+    - name: Run sleep.sh
+      command: /home/ansible/sleep.sh
+      async: 60
+      poll: 0

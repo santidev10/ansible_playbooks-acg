@@ -1,0 +1,24 @@
+--- # tags example
+- hosts: localhost
+  tasks: 
+    - name: install elinks
+      become: yes
+      yum:
+        name: elinks
+        state: latest
+      tags:
+        - software
+    - name: ad line to text file
+      lineinfile:
+        path: /home/ansible/tag-test.txt
+        create: yes
+        line: "Tag called!"
+      tags: 
+        - files
+        - config
+    - name: copy tag to file
+      copy:
+        src: /home/ansible/tag-test.txt
+        dest: /tmp/copied/txt
+      tags:
+        - config

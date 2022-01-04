@@ -1,0 +1,12 @@
+--- # Serial execution example
+- hosts: all
+  serial:
+  - 1
+  - 3
+  - 5
+  become: yes
+  tasks:
+    - name: install elinks
+      package:
+        name: elinks
+        state: latest

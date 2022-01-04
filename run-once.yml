@@ -1,0 +1,13 @@
+--- # run once example
+- hosts: centos
+  tasks:
+    - name: run sleep.sh
+      command: /home/ansible/sleep.sh
+      async: 60
+      poll: 0
+      run_once: yes
+    - name: install mariadb
+      package:
+        name: mariadb-server
+        state: latest
+      become: yes

@@ -1,0 +1,6 @@
+---
+# tasks file for /home/ansible/common
+- name: install elinks
+  yum:
+    name: elinks
+    state: latest

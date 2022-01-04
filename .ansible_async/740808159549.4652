@@ -1,0 +1,1 @@
+{"msg": "[Errno 13] Permission denied", "failed": true, "cmd": "/home/ansible/sleep.sh", "invocation": {"module_args": {"warn": true, "executable": null, "_uses_shell": false, "strip_empty_ends": true, "_raw_params": "/home/ansible/sleep.sh", "removes": null, "argv": null, "creates": null, "chdir": null, "stdin_add_newline": true, "stdin": null}}, "rc": 13}

@@ -1,0 +1,14 @@
+--- # error handling example #1
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: install software
+      yum:
+        name: broke
+        state: latest
+      ignore_errors: yes
+    - name: run utility
+      command: /home/ansible/do-stuff.sh what
+      register: cmd_output
+      changed_when: "'CHANGED' in cmd_output.stdout"
+      failed_when: "'FAIL' in cmd_output.stdout"
